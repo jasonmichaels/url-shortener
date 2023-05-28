@@ -27,3 +27,6 @@ NEXT_PUBLIC_BASE_URL=http://localhost:5305
 Next, install the dependencies. I'm using `yarn`, but `npm` should suffice (I started with `npm` but ran into some resolution issues with `nx`).
 
 Afterward, simply startup the application with `yarn start`. It'll launch on `http://localhost:5305`. 
+
+## Demo
+A demo of the `hURLy` site can be found [here](https://hurly.netlify.app/).
