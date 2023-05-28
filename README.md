@@ -1,12 +1,29 @@
 # UrlShortener
 
 ## Purpose
-This is a super-simple URL shortener application, using `nx`'s and `@nrwl/next` plugin, as well as Firebase for database access. It's merely an exercise!
+This is a super-simple URL shortener application, using `nx`'s `@nrwl/next` plugin, as well as Firebase for database access. It's merely an exercise!
 
 ## Running the app
-First, pull the repo. Note the `nx` used in this repo requires Node 16+ to run the application, so coordinate using your preferred method; I use `nvm`, for example.
+First, pull the repo. Note the `nx` version used in this repo currently requires Node 16+ to run the application, so coordinate using your preferred method; I use `nvm`, for example, to set Node to LTS for the running process.
 
-Next, You'll need to setup Firebase with an application and `urls` database collection, and get the configuration keys, etc. from Firebase console. The configuration key-value pairs are closely aligned with the following environment variables, and should be stored in `apps/url-shortener/.env`. I've also included two other variables, as noted.
+Next, You'll need to setup Firebase with an application and `urls` database collection, and get the configuration keys, etc. from Firebase console. 
+
+The document data structure is as follows:
+
+```js
+interface IDoc {
+  // set by Firebase
+  id: string;
+  shortUrl: string;
+  longUrl: string;
+  // type during Firestore setup is `timestamp`
+  created: timestamp;
+  // type during Firestore setup is `timestamp`
+  updated: timestamp;
+}
+```
+
+The configuration key-value pairs are closely aligned with the following environment variables, and should be stored in `apps/url-shortener/.env`. I've also included two other variables, as noted.
 
 ```bash
 # Firebase
