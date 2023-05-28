@@ -2,16 +2,21 @@
   "name": "@url-shortener/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run url-shortener:serve --port=5305 --hostname='localhost'"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "16.2.2",
+    "firebase": "^9.22.1",
+    "nanoid": "^4.0.2",
     "next": "13.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
     "@nx/cypress": "16.2.2",
     "@nx/eslint-plugin": "16.2.2",
     "@nx/jest": "16.2.2",

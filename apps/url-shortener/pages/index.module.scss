@@ -1,0 +1,94 @@
+$border-radius: 4px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  max-width: 768px;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+  background-color: lightgoldenrodyellow;
+  padding: 2rem;
+  border-radius: $border-radius;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    height: 40px;
+    font-size: 1.1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  button {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    padding: 8px;
+    max-width: 5rem;
+    height: 40px;
+    border-left: 1px solid #ccc;
+    font-weight: bold;
+    
+    &:hover {
+      cursor: pointer;
+      background-color: azure;
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.link {
+  color: blue;
+
+  &:visited {
+    color: purple;
+  }
+}

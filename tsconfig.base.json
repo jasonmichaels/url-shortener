@@ -13,8 +13,11 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@url-shortener/utils/*": ["libs/utils/src/lib/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
