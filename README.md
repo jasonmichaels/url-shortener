@@ -30,3 +30,8 @@ Afterward, simply startup the application with `yarn start`. It'll launch on `ht
 
 ## Demo
 A demo of the `hURLy` site can be found [here](https://hurly.netlify.app/).
+
+## TODOs
+- [ ] Implement `lint-staged` and `husky` to call `nx`-provided linting and formatting functionality during pre-commit hook
+- [ ] Implement Google Analytics
+- [ ] Flesh out better styling for the user-facing index page (it's pretty bare)
