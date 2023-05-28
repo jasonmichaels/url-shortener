@@ -52,3 +52,4 @@ A demo of the `hURLy` site can be found [here](https://hurly.netlify.app/).
 - [ ] Implement `lint-staged` and `husky` to call `nx`-provided linting and formatting functionality during pre-commit hook
 - [ ] Implement Google Analytics
 - [ ] Flesh out better styling for the user-facing index page (it's pretty bare)
+- [ ] Change `NEXT_PUBLIC`-prefaced environment variables, where necessary, to omit such prefix and, in the case of the Firebase variables, they only run on the server
