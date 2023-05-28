@@ -22,9 +22,9 @@ $border-radius: 4px;
   gap: 18px;
   align-items: center;
   width: 100%;
-  background-color: lightgoldenrodyellow;
   padding: 2rem;
   border-radius: $border-radius;
+  border: 1px solid #ccc;
 }
 
 .heading {
@@ -67,6 +67,11 @@ $border-radius: 4px;
       cursor: pointer;
       background-color: azure;
     }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -91,4 +96,10 @@ $border-radius: 4px;
   &:visited {
     color: purple;
   }
+}
+
+.error {
+  color: red;
+  align-self: flex-start;
+  padding-left: 0.25rem;
 }
