@@ -3,15 +3,34 @@ import { useCallback, FormEvent, useState, useMemo } from 'react';
 import styles from './index.module.scss';
 import ValidationUtil from '@url-shortener/utils/ValidationUtil';
 
+/**
+ * @description Page responsible for showing the initial form
+ * and displaying the stored `shortUrl` corresponding to the
+ * given longer (?) URL. 
+ */
 export default function Index() {
   const [longUrl, setLongUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
   const [error, setError] = useState('');
 
+  /**
+   * @description Helps control interactivity of submit button,
+   * as well as whether a keyboard on submit continues.
+   * 
+   * @TODOs
+   *  - limit submissions while in the process of submitting
+   *  - extract verbose submission handler logic elsewhere (new util?)
+   *  - cleanup styling!
+   */
   const isUrlValid = useMemo(() => {
     return ValidationUtil.validateUrl(longUrl);
   }, [longUrl]);
 
+  /**
+   * @description Submission callback -- queries `/api` routes to
+   * first check if a given URL already exists in the database and,
+   * if not, stores it in a new document.
+   */
   const handleChange = useCallback((e: any) => {
     setLongUrl(e.target.value);
   }, []);
@@ -48,13 +67,18 @@ export default function Index() {
     }
   }, [longUrl, isUrlValid]);
 
+  /**
+   * @description Since `shortUrl` only changes once its set in state,
+   * this memoization shouldn't fire but once or twice. Given to the
+   * user once the submission has processed.
+   */
   const formattedShortUrl = useMemo(() => {
     if (shortUrl) {
       return `${process.env.NEXT_PUBLIC_BASE_URL}/${shortUrl}`;
     }
 
     return '';
-  }, [shortUrl])
+  }, [shortUrl]);
 
   return (
     <main className={styles.container}>
