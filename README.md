@@ -10,7 +10,7 @@ Next, You'll need to setup Firebase with an application and `urls` database coll
 
 The document data structure is as follows:
 
-```js
+```ts
 interface IDoc {
   // set by Firebase
   id: string;
