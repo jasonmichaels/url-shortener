@@ -23,7 +23,7 @@ const CheckUrl = () => {
 
       const result = await response.json();
 
-      if (result.longUrl) {
+      if ('string' === typeof result?.longUrl) {
         /**
          * @NOTE Prelim analytics using document.requests to
          * track how often a URL is used
@@ -34,6 +34,8 @@ const CheckUrl = () => {
         });
 
         window.location.replace(result.longUrl);
+      } else {
+        window.location.replace(`${process.env.NEXT_PUBLIC_BASE_URL}/`)
       }
     })();
   }, [query]);

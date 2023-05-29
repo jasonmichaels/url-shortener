@@ -78,7 +78,7 @@ export const addToUrls = async (longUrl: string): Promise<IDoc> => {
   return document.data() as IDoc;
 }
 
-export const incrementUrlRequest = async (id: string) => {
+export const incrementUrlRequests = async (id: string) => {
   const documentRef = doc(db, 'urls' + '/' + id);
 
   await updateDoc(documentRef, {

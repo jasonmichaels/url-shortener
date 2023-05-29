@@ -1,13 +1,13 @@
 import { NextApiResponse, NextApiRequest } from "next";
 
-import { IDoc, incrementUrlRequest } from '@url-shortener/utils/FirebaseUtil';
+import { IDoc, incrementUrlRequests } from '@url-shortener/utils/FirebaseUtil';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { id } = 'string' === typeof req.body ? JSON.parse(req.body) : req.body;
 
       try {
-        await incrementUrlRequest(id);
+        await incrementUrlRequests(id);
   
         res.status(200).json({ success: true });
       } catch (e) {
