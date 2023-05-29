@@ -46,7 +46,7 @@ Next, install the dependencies. I'm using `yarn`, but `npm` should suffice (I st
 Afterward, simply startup the application with `yarn start`. It'll launch on `http://localhost:5305`. 
 
 ## Demo
-A demo of the `hURLy` site can be found [here](https://hurly.netlify.app/).
+A demo of the `hURLy` site can be found [here](https://hurly.io/).
 
 ## TODOs
 - [ ] Implement `lint-staged` and `husky` to call `nx`-provided linting and formatting functionality during pre-commit hook
